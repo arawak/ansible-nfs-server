@@ -1,9 +1,6 @@
 ---
 - name: debian | Installing NFS Server Packages
-  apt:
-    name: "{{ item }}"
-    state: "present"
+  ansible.builtin.apt:
+    pkg:
+    - nfs-kernel-server
   become: true
-  with_items:
-    - 'nfs-kernel-server'
-    - 'rpcbind'
